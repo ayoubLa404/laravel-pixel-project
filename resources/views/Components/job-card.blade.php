@@ -1,15 +1,18 @@
-<div class="flex flex-col text-center p-4 bg-white/5 hover:bg-white/10 duration-300 rounded-xl border border-white/20">
-    <h4 class="self-start text-sm">Laracast</h4>
+@props(['job'])
+
+<x-panel class="flex-col text-center">
+    <h4 class="self-start text-sm">{{ $job->employer->name }}</h4>
     <div class="space-y-2 py-8 ">
-        <h3 class="text-xl font-bold">Full Stack Laravel Developer </h3>
-        <p class="font-semibold">Full Time - From $60,000</p>
+        <h3 class="text-xl font-bold transition-colors duration-300 group-hover:text-blue-400">{{ $job->title }}</h3>
+        <p class="font-semibold">{{ $job->salary }}</p>
     </div>
-    <div class="flex justify-between items-center mt-auto">
-        <div class="space-x-1">
-            <x-tag>#hello</x-tag>
-            <x-tag>Tag2</x-tag>
-            <x-tag>Tag3</x-tag>
+    <div class="flex justify-between items-center gap-3 mt-auto">
+        <div class="flex justify-start gap-1">
+            @foreach ($job->tags as $tag)
+                <x-tag type='small' :$tag />
+            @endforeach
         </div>
-        <img src="http://placehold.it/42/42" alt="img">
+        <x-employer-logo :size='42' />
     </div>
-</div>
+
+</x-panel>
