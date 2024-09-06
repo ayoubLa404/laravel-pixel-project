@@ -17,7 +17,8 @@ class Job extends Model
         return $this->belongsTo(Employer::class);
     }
 
-    public function tag(string $name): void
+    // if u call assignTag method it will attach a tag to that job you called it on 
+    public function assignTag(string $name): void
     {
         $tag = Tag::firstOrCreate(['name' => $name]);
         $this->tags()->attach($tag);
