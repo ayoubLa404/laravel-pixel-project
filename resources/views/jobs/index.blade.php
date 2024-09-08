@@ -2,8 +2,11 @@
     <div class="space-y-10 pb-8 md:px-6 ">
         <section class="text-center pt-6 pb-10">
             <h1 class="mb-6 font-bold text-4xl">Let's Find You A Great Job</h1>
-            <input type="text" placeholder="i'm looking for"
-                class="inline-block w-full max-w-xl text-lg text-white/90 bg-white/10 border border-white/10 rounded-xl py-4 px-5 outline-none focus:ring focus:ring-orange-200">
+
+            <x-forms.form action='/search' class="mt-4">
+                <x-forms.input name='q' :label='false' placeholder="Web Development ..." />
+            </x-forms.form>
+
         </section>
 
         <section>

@@ -1,4 +1,4 @@
-@props(['size' => 90])
+@props(['employer', 'size' => 90])
 
-<img src="https://picsum.photos/id/{{ rand(0, 1000) }}/{{ $size }}" alt=""
+<img src="{{ asset($employer->logo) }}" alt="" width="{{ $size }}" height="{{ $size }}"
     class="block object-cover rounded-sm">
